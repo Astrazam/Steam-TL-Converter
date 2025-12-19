@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 340px;
+      overflow: hidden;
+      /* Prevent scrollbars strictly */
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1B2838 0%, #0f1419 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: #ecf0f1;
+    }
+
+    .container {
+      padding: 16px;
+      /* Reduced from 20px */
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      /* Reduced from 16px */
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 8px;
+      /* Reduced from 12px */
+      border-bottom: 1px solid rgba(236, 240, 241, 0.1);
+      position: relative;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: rgba(236, 240, 241, 0.6);
+    }
+
+    .rate-info {
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .rate-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: #00d4ff;
+      margin-top: 4px;
+    }
+
+    .settings {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .setting-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(236, 240, 241, 0.1);
+      border-radius: 8px;
+      padding: 12px 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .setting-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .checkbox-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(0, 212, 255, 0.5);
+      border-radius: 4px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    input[type="checkbox"]:hover {
+      border-color: #00d4ff;
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    input[type="checkbox"]:checked {
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      border-color: #00d4ff;
+    }
+
+    input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: white;
+      font-size: 14px;
+      /* Slightly larger */
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .label-text {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ecf0f1;
+    }
+
+    .label-description {
+      font-size: 12px;
+      color: rgba(236, 240, 241, 0.5);
+      /* margin-left: 30px; REMOVED per user request for better alignment */
+      display: block;
+      /* Ensure it breaks to new line if inside flex */
+      margin-top: 2px;
+    }
+
+    .features {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(236, 240, 241, 0.1);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .features-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #00d4ff;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 11px;
+      color: rgba(236, 240, 241, 0.7);
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .feature-item::before {
+      content: '✓';
+      color: #00d4ff;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      padding-top: 8px;
+      border-top: 1px solid rgba(236, 240, 241, 0.1);
+      font-size: 11px;
+      color: rgba(236, 240, 241, 0.4);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .status-active {
+      background: rgba(0, 212, 255, 0.2);
+      color: #00d4ff;
+    }
+
+    .status-inactive {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(236, 240, 241, 0.5);
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      backdrop-filter: blur(2px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #1B2838;
+      width: 90%;
+      max-height: 90%;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      color: rgba(236, 240, 241, 0.5);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal-close:hover {
+      color: #fff;
+    }
+
+    .modal-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #00d4ff;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(236, 240, 241, 0.1);
+    }
+
+    .modal-text {
+      font-size: 13px;
+      color: rgba(236, 240, 241, 0.9);
+      line-height: 1.5;
+    }
+
+    .modal-text p {
+      margin-bottom: 10px;
+    }
+
+    .modal-text ul {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .modal-text li {
+      margin-bottom: 4px;
+    }
+
+    .help-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(0, 212, 255, 0.15);
+      color: #00d4ff;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 6px;
+      transition: all 0.2s;
+    }
+
+    .help-icon:hover {
+      background: #00d4ff;
+      color: #1B2838;
+      transform: scale(1.1);
+    }
+
+    .recommended-rates {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+
+    .rate-category {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 4px;
+    }
+
+    .rate-category:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* Helper Box Styles (Extracted) */
+    .helper-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .helper-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #00d4ff;
+      margin-bottom: 10px;
+    }
+
+    .input-label {
+      font-size: 11px;
+      margin-bottom: 4px;
+      display: block;
+      color: rgba(236, 240, 241, 0.7);
+    }
+
+    .calc-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(236, 240, 241, 0.2);
+      border-radius: 4px;
+      color: #fff;
+      padding: 6px 8px;
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    .calc-btn {
+      flex: 1;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      border: none;
+      border-radius: 4px;
+      color: white;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .apply-btn {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(236, 240, 241, 0.2);
+      border-radius: 4px;
+      color: #fff;
+      padding: 6px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .manual-explanation {
+      font-size: 11px;
+      color: rgba(236, 240, 241, 0.6);
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .formula-box {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 6px;
+      border-radius: 4px;
+      margin: 8px 0;
+      font-family: monospace;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .weekend-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #00d4ff;
+      background: rgba(0, 212, 255, 0.1);
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header" style="position: relative;">
+      <div class="title">Steam TL Converter</div>
+      <div class="subtitle">Gelişmiş Fiyat Dönüştürücü</div>
+      <span id="statusBadge" class="status-badge status-inactive">Kapalı</span>
+      <div id="btnExtraSettings" class="help-icon"
+        style="position: absolute; top: 8px; right: 10px; font-size: 22px; width: 24px; height: 24px; padding: 0; padding-bottom: 4px; display: flex; align-items: center; justify-content: center;">
+        +</div>
+    </div>
+
+    <div class="rate-info">
+      <div>Güncel Döviz Kuru</div>
+      <div class="rate-value" id="rateValue">Yükleniyor...</div>
+    </div>
+
+    <div class="settings">
+      <div class="setting-item">
+        <label>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="extensionEnabled">
+          </div>
+          <div>
+            <div class="label-text">Eklentiyi Aç</div>
+            <div class="label-description">Fiyatları dönüştür</div>
+          </div>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <label>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="showOnlyTL">
+          </div>
+          <div>
+            <div class="label-text">Sadece ₺ Göster</div>
+            <div class="label-description">Yalnızca Türk Lirası fiyatlarını gör</div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Moved 'Other Stores' and 'Game Pass' to Extra Settings Modal -->
+
+      <div class="setting-item" style="padding: 14px;">
+        <div class="label-text" style="margin-bottom: 8px;">Kur Kaynağı</div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label style="font-size: 12px; color: rgba(236, 240, 241, 0.8);">
+            <input type="radio" name="rateSource" value="tcmb" id="rateTCMB" style="margin-right: 6px;">
+            TCMB (Merkez Bankası)
+          </label>
+          <label style="font-size: 12px; color: rgba(236, 240, 241, 0.8);">
+            <input type="radio" name="rateSource" value="floatrates" id="rateFloatRates" style="margin-right: 6px;">
+            FloatRates (Alternatif)
+          </label>
+        </div>
+      </div>
+
+      <!-- Banka Komisyonu Ayarı -->
+      <div class="setting-item" style="padding: 12px 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <label style="width: auto;">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="bankCommissionEnabled">
+            </div>
+            <div style="display: flex; align-items: center;">
+              <div class="label-text">Banka Komisyonu</div>
+            </div>
+          </label>
+          <div class="help-icon" id="helpIcon">?</div>
+        </div>
+
+        <div id="commissionInputContainer"
+          style="margin-left: 30px; display: flex; align-items: center; gap: 8px; opacity: 0.5; pointer-events: none; transition: all 0.3s ease;">
+          <input type="number" id="bankCommissionAmount" value="4" step="0.1" min="0" max="100" style="
+            width: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(236, 240, 241, 0.2);
+            border-radius: 4px;
+            color: #fff;
+            padding: 4px 8px;
+            font-family: inherit;
+            font-size: 13px;
+          ">
+          <span style="font-size: 13px; color: rgba(236, 240, 241, 0.8);">% Komisyon</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="footer">
+      4zam • v1.8.0 • TCMB / FloatRates / IsThereAnyDeal
+    </div>
+  </div>
+
+  <!-- Help Modal -->
+  <div class="modal-overlay" id="helpModal">
+    <div class="modal-content">
+      <div class="modal-close" id="closeModal">×</div>
+      <div class="modal-title">Banka Komisyonu Hesaplama</div>
+      <div class="modal-text">
+        <!-- Hesaplama Aracı -->
+        <div class="helper-box">
+          <div class="helper-title">Otomatik Hesaplayıcı
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <label class="input-label">Kıyaslanacak
+              Kur</label>
+            <div style="display: flex; gap: 10px;">
+              <label style="font-size: 12px; display: flex; align-items: center; gap: 4px;">
+                <input type="radio" name="calcSource" value="tcmb" checked> TCMB
+              </label>
+              <label style="font-size: 12px; display: flex; align-items: center; gap: 4px;">
+                <input type="radio" name="calcSource" value="floatrates"> FloatRates
+              </label>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <label class="input-label">Bankanızın
+              Dolar Satış Kuru</label>
+            <input type="number" id="calcBankRate" placeholder="Örn: 35.70" step="0.01" class="calc-input">
+          </div>
+
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <button id="btnCalculate" class="calc-btn">Hesapla</button>
+            <div id="calcResult" style="font-size: 13px; font-weight: bold; color: #66ff99;"></div>
+          </div>
+
+          <div id="calcActionContainer"
+            style="display: none; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+            <button id="btnApplyRate" class="apply-btn">Bu Oranı Kullan</button>
+          </div>
+        </div>
+
+        <!-- Manuel Hesaplama Açıklaması -->
+        <div class="manual-explanation">
+          <div style="font-weight: 600; margin-bottom: 8px; color: rgba(236, 240, 241, 0.8);">Manuel Hesaplama</div>
+          <p>1. Mevcut kuru not edin.</p>
+          <p>2. Bankanızın Dolar Satış kuruna bakın.</p>
+          <p>3. Bankanın kuru ile Mevcut kur arasındaki farkı yüzdesel olarak hesaplayın.</p>
+
+          <div class="formula-box">
+            Komisyon = ((Banka Satış - Mevcut Kur) / Mevcut Kur) * 100
+          </div>
+        </div>
+
+        <div class="weekend-note">
+          Hafta Sonu/Gece banka komisyonu daha yüksektir.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra Settings Modal -->
+  <div class="modal-overlay" id="extraSettingsModal">
+    <div class="modal-content">
+      <div class="modal-close" id="closeExtraSettingsModal">×</div>
+      <div class="modal-title">Diğer Ayarlar</div>
+
+      <div class="settings">
+        <div class="setting-item">
+          <label>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="gamePassEnabled">
+            </div>
+            <div>
+              <div class="label-text">Game Pass Durumu</div>
+              <div class="label-description">Oyunun Game Pass'te olup olmadığını gör</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="itadPricesEnabled">
+            </div>
+            <div>
+              <div class="label-text">Diğer Mağazalar</div>
+              <div class="label-description">Diğer mağaza fiyatlarını gör</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
