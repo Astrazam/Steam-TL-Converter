@@ -57,8 +57,8 @@ Bu proje **%100 Açık Kaynak**'tır. Şeffaflık ilkesi gereği:
 * Gösterilen "Banka Komisyonlu" fiyatlar tahminidir; bankanızın anlık politikalarına göre değişiklik gösterebilir.
 
 ## ❤️ Teşekkürler ve Kaynaklar (Credits)
-Bu proje aşağıdaki harika kaynaklar olmadan mümkün olmazdı:
-* **[IsThereAnyDeal API](https://isthereanydeal.com/):** Oyun fiyatlarını ve Game Pass durumunu sorgulamak için kullanılmaktadır. Bu kapsamlı veritabanını sağladıkları için ekiplerine teşekkürler.
+
+* **[IsThereAnyDeal API](https://isthereanydeal.com/):** Oyun fiyatlarını ve Game Pass durumunu sorgulamak için kullanılmaktadır.
 * **[FloatRates](http://www.floatrates.com/) & [TCMB](https://www.tcmb.gov.tr/):** Günlük döviz kuru verileri için kullanılmaktadır.
 * **[Shields.io](https://shields.io/):** README dosyasındaki rozetler için kullanılmıştır.
 
@@ -112,8 +112,8 @@ This project is **Open Source**.
 * This extension is not affiliated with **Valve Corporation** or **Steam**.
 
 ## ❤️ Credits & Resources
-This project wouldn't be possible without these amazing resources:
-* **[IsThereAnyDeal API](https://isthereanydeal.com/):** Used for fetching game prices across different stores and checking Xbox Game Pass availability. Special thanks to their team for maintaining such a comprehensive database.
+
+* **[IsThereAnyDeal API](https://isthereanydeal.com/):** Used for fetching game prices across different stores and checking Xbox Game Pass availability.
 * **[FloatRates](http://www.floatrates.com/) & [TCMB](https://www.tcmb.gov.tr/):** Used for daily exchange rate data.
 * **[Shields.io](https://shields.io/):** Used for the badges in this README.
 
