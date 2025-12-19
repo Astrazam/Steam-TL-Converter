@@ -1,6 +1,6 @@
 # 🇹🇷 Steam TL Converter
 
-![Version](https://img.shields.io/badge/version-v1.8.0-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Privacy](https://img.shields.io/badge/privacy-client--side-success)
+![Version](https://img.shields.io/badge/version-v1.8.0-blue) ![Chrome](https://img.shields.io/badge/Chrome-Supported-4285F4?logo=google-chrome&logoColor=white) ![Firefox](https://img.shields.io/badge/Firefox-Supported-FF7139?logo=firefox-browser&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-green) ![Privacy](https://img.shields.io/badge/privacy-client--side-success)
 
 **Steam TL Converter**, Steam mağazasındaki USD fiyatlarını anlık kur bilgisiyle otomatik olarak **Türk Lirası (₺)** cinsine çeviren, açık kaynaklı ve güvenli bir tarayıcı eklentisidir.
 
@@ -21,17 +21,26 @@ Sadece çeviri yapmakla kalmaz; **Xbox Game Pass kontrolü**, **fiyat karşıla�
 
 ## 📥 Kurulum
 
-### 1. Chrome Web Mağazası (Önerilen)
-Eklentiyi doğrudan mağazadan güvenle indirip kullanmaya başlayabilirsiniz:
-👉 **[Chrome Web Mağazası Bağlantısı](https://chromewebstore.google.com/detail/bpmocjncifcldofcpacaecgecjagilka)**
+### 1. Mağazalardan Yükleme (Önerilen)
+Eklentiyi kullandığınız tarayıcının mağazasından güvenle indirebilirsiniz:
+
+| Tarayıcı | Mağaza Bağlantısı | Durum |
+| :--- | :--- | :--- |
+| **Chrome** | 👉 **[Chrome Web Mağazası](https://chromewebstore.google.com/detail/bpmocjncifcldofcpacaecgecjagilka)** | ✅ Yayında |
+| **Firefox** | 👉 **[Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/steam-tl-converter/)** | ⏳ İncelemede |
 
 ### 2. Geliştirici Modu (Manuel Yükleme)
 Kaynak kodları incelemek veya geliştirmek istiyorsanız:
-1.  Bu repoyu bilgisayarınıza indirin (Clone veya Download ZIP).
-2.  Chrome tarayıcınızda `chrome://extensions/` adresine gidin.
-3.  Sağ üstteki **"Geliştirici Modu"**nu açın.
-4.  Sol üstteki **"Paketlenmemiş öğe yükle" (Load unpacked)** butonuna tıklayın.
-5.  İndirdiğiniz proje klasörünü seçin.
+
+#### Chrome İçin:
+1.  Bu repoyu indirin (Clone veya Download ZIP).
+2.  `chrome://extensions/` adresine gidin ve **Geliştirici Modu**'nu açın.
+3.  **"Paketlenmemiş öğe yükle"** diyerek klasörü seçin.
+
+#### Firefox İçin:
+1.  `about:debugging` adresine gidin.
+2.  **"Bu Firefox"** > **"Geçici Eklenti Yükle"** butonuna basın.
+3.  Klasör içindeki **`manifest-firefox.json`** dosyasını seçin.
 
 ---
 
@@ -45,8 +54,13 @@ Bu proje **%100 Açık Kaynak**'tır. Şeffaflık ilkemiz gereği:
 
 ## ⚠️ Yasal Uyarı (Disclaimer)
 * Bu eklenti **Valve Corporation** veya **Steam** ile ilişkili değildir.
-* Fiyat karşılaştırma ve Game Pass verileri **IsThereAnyDeal.com** tarafından sağlanmaktadır.
 * Gösterilen "Banka Komisyonlu" fiyatlar tahminidir; bankanızın anlık politikalarına göre değişiklik gösterebilir.
+
+## ❤️ Teşekkürler ve Kaynaklar (Credits)
+Bu proje aşağıdaki harika kaynaklar olmadan mümkün olmazdı:
+* **[IsThereAnyDeal API](https://isthereanydeal.com/):** Oyun fiyatlarını ve Game Pass durumunu sorgulamak için kullanılmaktadır. Bu kapsamlı veritabanını sağladıkları için ekiplerine teşekkürler.
+* **[FloatRates](http://www.floatrates.com/) & [TCMB](https://www.tcmb.gov.tr/):** Günlük döviz kuru verileri için kullanılmaktadır.
+* **[Shields.io](https://shields.io/):** README dosyasındaki rozetler için kullanılmıştır.
 
 ---
 ---
@@ -69,15 +83,24 @@ It acts as a shopping assistant with features like **Xbox Game Pass check**, **p
 
 ## 📥 Installation
 
-### 1. Chrome Web Store (Recommended)
-You can verify and install the extension directly from the store:
-👉 **[Link to Chrome Web Store](https://chromewebstore.google.com/detail/bpmocjncifcldofcpacaecgecjagilka)**
+### 1. Web Stores (Recommended)
+
+| Browser | Store Link | Status |
+| :--- | :--- | :--- |
+| **Chrome** | 👉 **[Chrome Web Store](https://chromewebstore.google.com/detail/bpmocjncifcldofcpacaecgecjagilka)** | ✅ Live |
+| **Firefox** | 👉 **[Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/steam-tl-converter/)** | ⏳ In Review |
 
 ### 2. Manual Installation (Developer Mode)
-1.  Clone or download this repository.
-2.  Go to `chrome://extensions/` in your browser.
-3.  Enable **"Developer mode"** in the top right corner.
-4.  Click **"Load unpacked"** and select the extension folder.
+
+#### For Chrome:
+1.  Clone/Download this repo.
+2.  Go to `chrome://extensions/` and enable **Developer mode**.
+3.  Click **"Load unpacked"** and select the folder.
+
+#### For Firefox:
+1.  Go to `about:debugging`.
+2.  Click **"This Firefox"** > **"Load Temporary Add-on"**.
+3.  Select the **`manifest-firefox.json`** file inside the folder.
 
 ## 🔒 Privacy
 This project is **Open Source**.
@@ -87,4 +110,10 @@ This project is **Open Source**.
 
 ## ⚠️ Disclaimer
 * This extension is not affiliated with **Valve Corporation** or **Steam**.
-* Price comparison data provided by **IsThereAnyDeal.com**.
+
+## ❤️ Credits & Resources
+This project wouldn't be possible without these amazing resources:
+* **[IsThereAnyDeal API](https://isthereanydeal.com/):** Used for fetching game prices across different stores and checking Xbox Game Pass availability. Special thanks to their team for maintaining such a comprehensive database.
+* **[FloatRates](http://www.floatrates.com/) & [TCMB](https://www.tcmb.gov.tr/):** Used for daily exchange rate data.
+* **[Shields.io](https://shields.io/):** Used for the badges in this README.
+
