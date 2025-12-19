@@ -45,7 +45,7 @@ Kaynak kodları incelemek veya geliştirmek istiyorsanız:
 ---
 
 ## 🔒 Gizlilik ve Güvenlik
-Bu proje **%100 Açık Kaynak**'tır. Şeffaflık ilkemiz gereği:
+Bu proje **%100 Açık Kaynak**'tır. Şeffaflık ilkesi gereği:
 * Hiçbir kişisel veriniz sunucularımızda toplanmaz veya saklanmaz.
 * Tüm işlemler yerel cihazınızda gerçekleşir.
 * Daha fazla bilgi için [Gizlilik Politikası (Privacy Policy)](PRIVACY.md) dosyasını inceleyebilirsiniz.
