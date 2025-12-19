@@ -110,6 +110,7 @@ This project is **Open Source**.
 
 ## ⚠️ Disclaimer
 * This extension is not affiliated with **Valve Corporation** or **Steam**.
+* The "Bank Commission" prices displayed are estimates; actual charges may vary depending on your bank's current policies.
 
 ## ❤️ Credits & Resources
 
@@ -117,3 +118,4 @@ This project is **Open Source**.
 * **[FloatRates](http://www.floatrates.com/) & [TCMB](https://www.tcmb.gov.tr/):** Used for daily exchange rate data.
 * **[Shields.io](https://shields.io/):** Used for the badges in this README.
 
+---
