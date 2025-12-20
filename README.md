@@ -9,10 +9,12 @@ Sadece çeviri yapmakla kalmaz; **Xbox Game Pass kontrolü**, **fiyat karşıla�
 ---
 
 ## 🔥 v1.8.0 ile Gelen Yenilikler
+
 * **🎮 Game Pass Kontrolü:** Baktığınız oyun Xbox Game Pass kütüphanesinde varsa, satın almadan önce özel bir rozet ile uyarır.
 * **⚖️ Fiyat Karşılaştırma:** Epic Games, Microsoft Store, GOG ve Humble Store fiyatlarını Steam sayfasında anlık olarak gösterir.
 
 ## ⭐ Temel Özellikler
+
 * **Otomatik Kur Çevirisi:** Mağaza, Pazar, Envanter, Sepet ve İstek Listesi dahil her yerde çalışır.
 * **Kur Kaynağı Seçimi:** Verileri **TCMB** veya **FloatRates** üzerinden çekme seçeneği.
 * **Banka Komisyonu Hesaplayıcı:** Bankanızın uyguladığı makas farkını fiyata dahil ederek kartınızdan çekilecek **net tutarı** gösterir.
@@ -22,6 +24,7 @@ Sadece çeviri yapmakla kalmaz; **Xbox Game Pass kontrolü**, **fiyat karşıla�
 ## 📥 Kurulum
 
 ### 1. Mağazalardan Yükleme (Önerilen)
+
 Eklentiyi kullandığınız tarayıcının mağazasından güvenle indirebilirsiniz:
 
 | Tarayıcı | Mağaza Bağlantısı | Durum |
@@ -30,14 +33,17 @@ Eklentiyi kullandığınız tarayıcının mağazasından güvenle indirebilirsi
 | **Firefox** | 👉 **[Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/steam-tl-converter/)** | ⏳ İncelemede |
 
 ### 2. Geliştirici Modu (Manuel Yükleme)
+
 Kaynak kodları incelemek veya geliştirmek istiyorsanız:
 
 #### Chrome İçin:
+
 1.  Bu repoyu indirin (Clone veya Download ZIP).
 2.  `chrome://extensions/` adresine gidin ve **Geliştirici Modu**'nu açın.
 3.  **"Paketlenmemiş öğe yükle"** diyerek klasörü seçin.
 
 #### Firefox İçin:
+
 1.  `about:debugging` adresine gidin.
 2.  **"Bu Firefox"** > **"Geçici Eklenti Yükle"** butonuna basın.
 3.  Klasör içindeki **`manifest-firefox.json`** dosyasını seçin.
@@ -53,8 +59,10 @@ Bu proje **%100 Açık Kaynak**'tır. Şeffaflık ilkesi gereği:
 ---
 
 ## ⚠️ Yasal Uyarı (Disclaimer)
+
 * Bu eklenti **Valve Corporation** veya **Steam** ile ilişkili değildir.
 * Gösterilen "Banka Komisyonlu" fiyatlar tahminidir; bankanızın anlık politikalarına göre değişiklik gösterebilir.
+* **Affiliate Bildirimi:** Fiyat karşılaştırma bağlantıları, veri sağlayıcısı olan **IsThereAnyDeal**'a ait gelir ortaklığı (affiliate) parametreleri içerebilir. Bu eklentinin geliştiricisi bu bağlantılardan **hiçbir gelir, komisyon veya maddi fayda elde etmez.**
 
 ## ❤️ Teşekkürler ve Kaynaklar (Credits)
 
@@ -72,10 +80,12 @@ Bu proje **%100 Açık Kaynak**'tır. Şeffaflık ilkesi gereği:
 It acts as a shopping assistant with features like **Xbox Game Pass check**, **price comparison**, and **bank commission calculation**.
 
 ## 🔥 What's New in v1.8.0
+
 * **🎮 Game Pass Check:** Alerts you via a badge if the game is available on Xbox Game Pass.
 * **⚖️ Price Comparison:** Displays current prices from Epic Games, Microsoft Store, GOG, and Humble Store directly on the Steam page.
 
 ## ⭐ Key Features
+
 * **Auto Currency Conversion:** Works on Store, Market, Inventory, Cart, and Wishlist.
 * **Exchange Rate Sources:** Options to fetch rates from **TCMB** (Central Bank of Türkiye) or **FloatRates**.
 * **Bank Commission Calculator:** Adds your bank's estimated commission fee to display the **net amount** charged to your card.
@@ -93,24 +103,29 @@ It acts as a shopping assistant with features like **Xbox Game Pass check**, **p
 ### 2. Manual Installation (Developer Mode)
 
 #### For Chrome:
+
 1.  Clone/Download this repo.
 2.  Go to `chrome://extensions/` and enable **Developer mode**.
 3.  Click **"Load unpacked"** and select the folder.
 
 #### For Firefox:
+
 1.  Go to `about:debugging`.
 2.  Click **"This Firefox"** > **"Load Temporary Add-on"**.
 3.  Select the **`manifest-firefox.json`** file inside the folder.
 
 ## 🔒 Privacy
+
 This project is **Open Source**.
 * We do not collect, store, or share any personal data.
 * All operations are performed locally on your device.
 * See [Privacy Policy](PRIVACY.md) for details.
 
 ## ⚠️ Disclaimer
+
 * This extension is not affiliated with **Valve Corporation** or **Steam**.
 * The "Bank Commission" prices displayed are estimates; actual charges may vary depending on your bank's current policies.
+* **Affiliate Disclosure:** Price comparison links provided by **IsThereAnyDeal** may contain their own affiliate tracking parameters. The developer of this extension receives **no commission, revenue, or financial benefit** from these links.
 
 ## ❤️ Credits & Resources
 
@@ -118,4 +133,3 @@ This project is **Open Source**.
 * **[FloatRates](http://www.floatrates.com/) & [TCMB](https://www.tcmb.gov.tr/):** Used for daily exchange rate data.
 * **[Shields.io](https://shields.io/):** Used for the badges in this README.
 
----
