@@ -30,7 +30,7 @@ Eklentiyi kullandığınız tarayıcının mağazasından güvenle indirebilirsi
 | Tarayıcı | Mağaza Bağlantısı | Durum |
 | :--- | :--- | :--- |
 | **Chrome** | 👉 **[Chrome Web Mağazası](https://chromewebstore.google.com/detail/bpmocjncifcldofcpacaecgecjagilka)** | ✅ Yayında |
-| **Firefox** | 👉 **[Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/steam-tl-converter/)** | ⏳ İncelemede |
+| **Firefox** | 👉 **[Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/steam-tl-converter/)** | ✅ Yayında |
 
 ### 2. Geliştirici Modu (Manuel Yükleme)
 
@@ -98,7 +98,7 @@ It acts as a shopping assistant with features like **Xbox Game Pass check**, **p
 | Browser | Store Link | Status |
 | :--- | :--- | :--- |
 | **Chrome** | 👉 **[Chrome Web Store](https://chromewebstore.google.com/detail/bpmocjncifcldofcpacaecgecjagilka)** | ✅ Live |
-| **Firefox** | 👉 **[Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/steam-tl-converter/)** | ⏳ In Review |
+| **Firefox** | 👉 **[Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/steam-tl-converter/)** | ✅ Live |
 
 ### 2. Manual Installation (Developer Mode)
 
